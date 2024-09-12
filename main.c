@@ -39,7 +39,7 @@ produto *import_data() {
         arrayProdutos[i].name,
         &arrayProdutos[i].quantity,
         &arrayProdutos[i].price);
-        }
+    }
     fclose(ptrStorage);
     return arrayProdutos;
 }
