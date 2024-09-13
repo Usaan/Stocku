@@ -104,7 +104,7 @@ void menu(produto *arrayProdutos, int qtd) {
     int option;
     do {
         system("cls");
-        printf("1. Listar produtos\t\t3. Remover produtos\n2. Adicionar produtos\t\t4. Buscar produtos\n5. Em breve...\t\t\t0. Sair");
+        printf("[1]. Listar produtos\t\t2. Adicionar produtos\n3. Remover produtos\t\t4. Buscar produtos\n5. Em breve...\t\t\t0. Sair");
         printf("\nEscolha uma opção: ");
         scanf("%d", &option);
         switch (option) {
@@ -147,7 +147,7 @@ void menu(produto *arrayProdutos, int qtd) {
             case 4:
                 system("cls");
                 int option2;
-                printf("1. Buscar pelo ID\t2. Buscar pelo Nome\n");
+                printf("[1]. Buscar pelo ID\t[2]. Buscar pelo Nome\n");
                 printf("Escolha o algoritmo de busca: "); scanf("%d", &option2);
 
                 switch (option2) {
