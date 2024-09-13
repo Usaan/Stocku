@@ -5,7 +5,6 @@
 #include <locale.h>
 
 int qty = 0, selected_product, selected_qty, ID;
-float price, price_low, price_high;
 
 struct Produto {
     int id;
