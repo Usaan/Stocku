@@ -66,13 +66,27 @@ produto* find_by_name(produto *arrayProdutos, int qtd) {
     
 }
 void menu(produto *arrayProdutos, int qtd) {
+
+    int valid_option;
     int option;
+    
     do {
         system("cls");
-        printf("[1]. Listar produtos\t\t[2]. Adicionar produtos\n[3]. Remover produtos\t\t[4]. Buscar produtos\n[5]. Em breve...\t\t[0]. Sair");
+        printf("\n[1]. Listar produtos\t\t[2]. Adicionar produtos\n[3]. Remover produtos\t\t[4]. Buscar produtos\n[5]. Em breve...\t\t[0]. Sair\n");
         printf("\nEscolha uma opção: ");
-        scanf("%d", &option);
-        switch (option) {
+
+        valid_option = scanf("%d", &option);
+
+        if (valid_option != 1){
+
+            system("cls");
+            printf("\n Opção inválida! Pressione qualquer tecla para repetir.\n");
+            fflush(stdin);
+            getchar();
+            system("cls");
+        }
+        else {
+            switch (option) {
             case 1:
                 system("cls");
                 list_products(arrayProdutos, qtd);
@@ -81,34 +95,118 @@ void menu(produto *arrayProdutos, int qtd) {
                 system("cls");
                 list_products_simple(arrayProdutos, qtd);
 
-                printf("Item que deseja adicionar: ");
-                scanf("%d", &selected_product);
-                printf("Quantidade desejada: ");
-                scanf("%d", &selected_qty);
+                //Tratamento de exceções: Seleção de produtos.
 
-                arrayProdutos[selected_product - 1].quantity += selected_qty;
-                system("cls");
-                printf("Quantidade acrescentada!\n");
+                int valid_product;
+                int valid_qty;
 
-                Sleep(1000);
-                system("cls");
+                while (valid_product){
+
+                    printf("\nItem que deseja adicionar:\n");
+                    valid_product = scanf("%d", &selected_product);
+
+                    if (valid_product != 1) {
+
+                        printf("\nOpção inválida! Tente novamente.\n");
+                        fflush(stdin);
+                    }
+                    else if (selected_product < 1 || selected_product > 10){
+
+                        printf("\nEsta numeração não corresponde a nenhum produto. Tente novamente.\n");
+                    }
+                    else {
+
+                        //Tratamento de exceções: Quantidade de produtos.
+
+                        while (valid_qty){
+
+                            printf("\nQuantidade desejada: ");
+                            valid_qty = scanf("%d", &selected_qty);
+
+                            if (valid_qty != 1){
+
+                                printf("\nOpção inválida! Tente novamente.\n");
+                                fflush(stdin);
+                            }
+                            else if (selected_qty < 1 || selected_qty > 100){
+
+                                printf("\nEsta numeração não é compatível. Tente novamente.\n");
+                            }
+                            else{ 
+                                arrayProdutos[selected_product - 1].quantity += selected_qty;
+                                system("cls");
+                                printf("\nQuantidade acrescentada!\n");
+
+                                Sleep(1000);
+                                system("cls");
+                                break; 
+                                } 
+                        }
+                        break;
+                        while (valid_qty != 0);
+                    }  
+                }
                 break;
+                while (valid_product != 0);
+                
             case 3:
                 system("cls");
                 list_products_simple(arrayProdutos, qtd);
 
-                printf("Item que deseja remover: ");
-                scanf("%d", &selected_product);
-                printf("Quantidade desejada: ");
-                scanf("%d", &selected_qty);
+                //Tratamento de exceções: Remoção de produtos.
 
-                arrayProdutos[selected_product - 1].quantity -= selected_qty;
-                system("cls");
-                printf("Quantidade removida!\n");
+                int valid_remove;
+                int valid_qty_remove;
 
-                Sleep(1000);
-                system("cls");
+                while (valid_remove){
+
+                    printf("\nItem que deseja remover:\n");
+                    valid_remove = scanf("%d", &selected_product);
+
+                    if (valid_remove != 1){
+
+                        printf("\nOpção inválida! Tente novamente.\n");
+                        fflush(stdin);
+                    }
+                    else if (selected_product < 1 || selected_product > 10){
+
+                        printf("\nEsta numeração não corresponde a nenhum produto. Tente novamente.\n");
+                    }
+                    else{
+
+                        //Tratamento de exceções: Remoção de quantidade.
+
+                        while (valid_qty_remove){
+
+                            printf("\nQuantidade desejada: ");
+                            valid_qty_remove = scanf("%d", &selected_qty);
+
+                            if (valid_qty_remove != 1){
+
+                                printf("\nOpção inválida! Tente novamente.\n");
+                                fflush(stdin);
+                            }
+                            else if (selected_qty < 1 || selected_qty > 100){
+
+                                printf("\nEsta numeração não é compatível. Tente novamente.\n");
+                            }
+                            else{ 
+                                arrayProdutos[selected_product - 1].quantity -= selected_qty;
+                                system("cls");
+                                printf("\nQuantidade removida!\n");
+
+                                Sleep(1000);
+                                system("cls");
+                                break; 
+                                } 
+                        }
+                        break;
+                        while (valid_qty_remove != 0);
+                    }  
+                }
                 break;
+                while (valid_remove != 0);
+
             case 4:
                 system("cls");
                 int option2;
@@ -125,7 +223,7 @@ void menu(produto *arrayProdutos, int qtd) {
                             printf("%-19s%-10dR$%-10.2f\n", test1->name, test1->quantity, test1->price);
                             printf("-----------------------------------------\n");
                         } else {
-                            printf("Nenhum item encontrado!\n");
+                            printf("\nNenhum item encontrado!\n");
                         }
                         fflush(stdin);
                         getchar();
@@ -140,9 +238,16 @@ void menu(produto *arrayProdutos, int qtd) {
                             printf("%-19s%-10dR$%-10.2f\n", test2->name, test2->quantity, test2->price);
                             printf("-----------------------------------------\n");
                         } else {
-                            printf("Nenhum item encontrado!\n");
+                            printf("\nNenhum item encontrado!\n");
                         }
 
+                        fflush(stdin);
+                        getchar();
+                        system("cls");
+                        break;
+                    default:
+                        system("cls");
+                        printf("\nOpção inválida! Pressione qualquer tecla para repetir.\n");
                         fflush(stdin);
                         getchar();
                         system("cls");
@@ -152,22 +257,23 @@ void menu(produto *arrayProdutos, int qtd) {
                 break;
             case 5:
                 system("cls");
-                printf("Se está lendo essa mensagem, significa que não deu tempo dessa função ser implementada :(\n");
+                printf("\nSe está lendo essa mensagem, significa que não deu tempo dessa função ser implementada :(\n");
                 Sleep(5000);
                 system("cls");
                 break;
             case 0:
                 system("cls");
-                printf("Encerrando...\n");
+                printf("\nEncerrando...\n");
                 Sleep(1500);
                 break;
             default:
                 system("cls");
-                printf("Opção inválida! Pressione qualquer tecla para repetir.\n");
+                printf("\nOpção inválida! Pressione qualquer tecla para repetir.\n");
                 fflush(stdin);
                 getchar();
                 system("cls");
                 break;
+        }
         }
     } while (option != 0);
 }
