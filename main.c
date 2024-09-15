@@ -3,45 +3,10 @@
 #include <stdlib.h>
 #include <direct.h>
 #include <locale.h>
+#include "verifystorage.h"
 
-int qty = 0, selected_product, selected_qty, ID;
+int selected_product, selected_qty, ID;
 
-struct Produto {
-    int id;
-    char name[20];
-    int quantity;
-    float price;
-};
-typedef struct Produto produto;
-
-int qtyItems(){
-    mkdir("database");
-    FILE *ptrStorage = fopen("database/storage.txt", "r");
-    if (ptrStorage == NULL) {
-        ptrStorage = fopen("database/storage.txt", "w");
-    }
-    char buffer[100];
-    while (fgets(buffer, sizeof(buffer), ptrStorage) != NULL) {
-        qty++;
-    }
-    fclose(ptrStorage);
-    return qty;
-}
-
-produto *import_data() {
-    FILE *ptrStorage = fopen("database/storage.txt", "r");
-    produto *arrayProdutos = malloc(sizeof(produto) * qty);
-
-    for (int i = 0; i < qty; i++) {
-        fscanf(ptrStorage, "%d %19s %d %f", 
-        &arrayProdutos[i].id,
-        arrayProdutos[i].name,
-        &arrayProdutos[i].quantity,
-        &arrayProdutos[i].price);
-    }
-    fclose(ptrStorage);
-    return arrayProdutos;
-}
 void list_products(produto *arrayProdutos, int qtd) {
     printf("---------------------------------------------------------------\n");
     printf("%-10s%-19s%-10s%-10s\n", "ID", "Nome", "Qtd", "Preço");
@@ -104,7 +69,7 @@ void menu(produto *arrayProdutos, int qtd) {
     int option;
     do {
         system("cls");
-        printf("[1]. Listar produtos\t\t2. Adicionar produtos\n3. Remover produtos\t\t4. Buscar produtos\n5. Em breve...\t\t\t0. Sair");
+        printf("[1]. Listar produtos\t\t[2]. Adicionar produtos\n[3]. Remover produtos\t\t[4]. Buscar produtos\n[5]. Em breve...\t\t[0]. Sair");
         printf("\nEscolha uma opção: ");
         scanf("%d", &option);
         switch (option) {
@@ -123,7 +88,7 @@ void menu(produto *arrayProdutos, int qtd) {
 
                 arrayProdutos[selected_product - 1].quantity += selected_qty;
                 system("cls");
-                printf("Item adicionado!\n");
+                printf("Quantidade acrescentada!\n");
 
                 Sleep(1000);
                 system("cls");
@@ -139,7 +104,7 @@ void menu(produto *arrayProdutos, int qtd) {
 
                 arrayProdutos[selected_product - 1].quantity -= selected_qty;
                 system("cls");
-                printf("Item adicionado!\n");
+                printf("Quantidade removida!\n");
 
                 Sleep(1000);
                 system("cls");
@@ -211,7 +176,7 @@ int main(int argc, char *argv[]) {
     setlocale(LC_ALL, "pt_BR.UTF-8");
     SetConsoleOutputCP(CP_UTF8);
 
-    qtyItems();
+    int qty = qtyItems();
     produto *arrayProdutos = import_data();
     menu(arrayProdutos, qty);
 
