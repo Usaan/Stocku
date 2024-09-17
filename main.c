@@ -4,6 +4,7 @@
 #include <direct.h>
 #include <locale.h>
 #include "verifystorage.h"
+#include "findprodmethods.h"
 
 int selected_product, selected_qty, ID;
 
@@ -20,6 +21,7 @@ void list_products(produto *arrayProdutos, int qtd) {
     printf("---------------------------------------------------------------\n");
     fflush(stdin);
     getchar();
+    fflush(stdin);
     system("cls");
 }
 void list_products_simple(produto *arrayProdutos, int qtd) {
@@ -34,37 +36,6 @@ void list_products_simple(produto *arrayProdutos, int qtd) {
     printf("-----------------------------------------\n");
 }
 
-produto* find_by_id(produto *arrayProdutos, int qtd) {
-    printf("ID do item que deseja buscar: ");
-    scanf("%d", &ID);
-    system("cls");
-
-    for (int i = 0; i < qtd; i++) {
-        if (arrayProdutos[i].id == ID) {
-            return &arrayProdutos[i];
-        }
-    }
-    return NULL;
-}
-
-produto* find_by_name(produto *arrayProdutos, int qtd) {
-    char tempSearch[20];
-
-    printf("Nome do item que deseja buscar: ");
-    fflush(stdin);
-    fgets(tempSearch, sizeof(tempSearch), stdin);
-    tempSearch[strcspn(tempSearch, "\n")] = 0;
-    system("cls");
-
-    for (int i = 0; i < qtd; i++) {
-        if (strcmp(arrayProdutos[i].name, tempSearch) == 0) {
-            return &arrayProdutos[i];
-        }
-    }
-    return NULL;
-    
-    
-}
 void menu(produto *arrayProdutos, int qtd) {
 
     int valid_option;
@@ -74,7 +45,7 @@ void menu(produto *arrayProdutos, int qtd) {
         system("cls");
         printf("\n[1]. Listar produtos\t\t[2]. Adicionar produtos\n[3]. Remover produtos\t\t[4]. Buscar produtos\n[5]. Em breve...\t\t[0]. Sair\n");
         printf("\nEscolha uma opção: ");
-
+        fflush(stdin);
         valid_option = scanf("%d", &option);
 
         if (valid_option != 1){

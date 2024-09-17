@@ -1,10 +1,4 @@
-typedef struct Produto {
-    int id;
-    char name[20];
-    int quantity;
-    float price;
-} produto;
+#include "product.h"
 
 produto* import_data();
 int qtyItems();
-
