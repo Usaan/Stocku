@@ -6,5 +6,5 @@ typedef struct Produto {
     int quantity;
     float price;
 } produto;
-
+int selected_product, selected_qty, ID;
 #endif
