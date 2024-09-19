@@ -43,6 +43,7 @@ void menu(produto *arrayProdutos, int qtd) {
     
     do {
         system("cls");
+        printf("\n\t\t-- [ MENU INICIAL ] --\n");
         printf("\n[1]. Listar produtos\t\t[2]. Adicionar produtos\n[3]. Remover produtos\t\t[4]. Buscar produtos\n[5]. Em breve...\t\t[0]. Sair\n");
         printf("\nEscolha uma opção: ");
         fflush(stdin);
@@ -84,7 +85,7 @@ void menu(produto *arrayProdutos, int qtd) {
                     }
                     else if (selected_product < 1 || selected_product > 10){
 
-                        printf("\nEsta numeração não corresponde a nenhum produto. Tente novamente.\n");
+                        printf("\nEsta numeração não corresponde a nenhum produto! Tente novamente.\n");
                     }
                     else {
 
@@ -102,7 +103,7 @@ void menu(produto *arrayProdutos, int qtd) {
                             }
                             else if (selected_qty < 1 || selected_qty > 100){
 
-                                printf("\nEsta numeração não é compatível. Tente novamente.\n");
+                                printf("\nEsta numeração não é compatível! Tente novamente.\n");
                             }
                             else{ 
                                 arrayProdutos[selected_product - 1].quantity += selected_qty;
@@ -142,7 +143,7 @@ void menu(produto *arrayProdutos, int qtd) {
                     }
                     else if (selected_product < 1 || selected_product > 10){
 
-                        printf("\nEsta numeração não corresponde a nenhum produto. Tente novamente.\n");
+                        printf("\nEsta numeração não corresponde a nenhum produto! Tente novamente.\n");
                     }
                     else{
 
@@ -160,7 +161,7 @@ void menu(produto *arrayProdutos, int qtd) {
                             }
                             else if (selected_qty < 1 || selected_qty > 100){
 
-                                printf("\nEsta numeração não é compatível. Tente novamente.\n");
+                                printf("\nEsta numeração não é compatível! Tente novamente.\n");
                             }
                             else{ 
                                 arrayProdutos[selected_product - 1].quantity -= selected_qty;
@@ -235,8 +236,8 @@ void menu(produto *arrayProdutos, int qtd) {
                 break;
             case 0:
                 system("cls");
-                printf("\nEncerrando...\n");
-                Sleep(1500);
+                printf("\nEncerrando...\n   ^---^\n  ( •ω• )\n o(  .  )o \n   U---U ");
+                Sleep(3000);
                 break;
             default:
                 system("cls");
