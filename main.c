@@ -60,6 +60,7 @@ void menu(produto *arrayProdutos, int qtd) {
             switch (option) {
             case 1:
                 system("cls");
+                fflush(stdin);
                 list_products(arrayProdutos, qtd);
                 break;
             case 2:
