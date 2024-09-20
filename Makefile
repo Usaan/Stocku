@@ -14,6 +14,7 @@ libgi:
 	gcc -c ${SRC}\findprodmethods.c -I ${INCLUDE} -o ${OBJ}\findprodmethods.o
 	gcc -c ${SRC}\listingprods.c -I ${INCLUDE} -o ${OBJ}\listingprods.o
 	gcc -c ${SRC}\menu.c -I ${INCLUDE} -o ${OBJ}\menu.o
+	gcc -c ${SRC}\overwrite.c -I ${INCLUDE} -o ${OBJ}\overwrite.o
 # target aplicativo
 myapp:
 # cria o diretório bin caso não exista
