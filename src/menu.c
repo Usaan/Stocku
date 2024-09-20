@@ -74,6 +74,7 @@ void menu(produto *arrayProdutos, int qtd) {
                                 system("cls");
                                 printf("\nQuantidade acrescentada!\n");
 
+                                overwrite(arrayProdutos, qtd);
                                 Sleep(1000);
                                 system("cls");
                                 break; 
