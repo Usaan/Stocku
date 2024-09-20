@@ -27,5 +27,5 @@ run:
 # target para limpar os executáveis e objetos gerados
 clean:
 	del /F /Q .\obj\*.o
-	del /F /Q .\bin\Stocku
+	del /F /Q .\bin\Stocku.exe
 	cls
