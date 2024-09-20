@@ -1,4 +1,9 @@
 #include "product.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <direct.h>
+#include <string.h>
+
 int selected_product, selected_qty, ID;
 
 produto* find_by_id(produto *arrayProdutos, int qtd);

@@ -1,6 +1,4 @@
 #include "listingprods.h"
-#include <stdlib.h>
-#include <stdio.h>
 
 void list_products(produto *arrayProdutos, int qtd) {
     printf("---------------------------------------------------------------\n");

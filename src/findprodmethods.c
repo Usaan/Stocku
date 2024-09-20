@@ -1,8 +1,4 @@
 #include "findprodmethods.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <direct.h>
-#include <string.h>
 
 produto* find_by_id(produto *arrayProdutos, int qtd) {
     printf("ID do item que deseja buscar: ");
