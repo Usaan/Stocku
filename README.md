@@ -67,7 +67,7 @@ Caso deseje compilar o projeto no Windows, existem dois métodos:
 make
 ```
 
-2. Usando Chocolatey. Primeiro instale esse gerenciador de pacotes. Após instalado, abra o CMD ou Powershell com privilégio de administrador e execute o seguinte comando, confirmando a permissão caso necessário
+2. Usando [Chocolatey](https://chocolatey.org/install). Primeiro instale esse gerenciador de pacotes. Após instalado, abra o CMD ou Powershell com privilégio de administrador e execute o seguinte comando, confirmando a permissão caso necessário
 ‎ 
 ```
 choco install make
