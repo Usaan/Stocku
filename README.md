@@ -35,6 +35,16 @@ O programa Stocku serve para gerenciamento básico de estoque através de um dat
 ⠀⠀⠀⠀⠀⢰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⢀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⣸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+## Funcionalidades
+
+- A ser adicionado
+-
+-
+-
+-
+-
+
+
 ## Autores
 
 - [@Usaan](https://github.com/Usaan)
@@ -47,12 +57,23 @@ O programa Stocku serve para gerenciamento básico de estoque através de um dat
 
 
 
-## Funcionalidades
+## Instruções para compilação
 
-- A ser adicionado
--
--
--
--
--
+Caso deseje compilar o projeto no Windows, existem dois métodos:
 
+1. Baixe diretamente o [Make para Windows](https://gnuwin32.sourceforge.net/packages/make.htm) e execute via terminal no diretório do projeto
+‎ 
+```
+make
+```
+
+2. Usando Chocolatey. Primeiro instale esse gerenciador de pacotes. Após instalado, abra o CMD ou Powershell com privilégio de administrador e execute o seguinte comando, confirmando a permissão caso necessário
+‎ 
+```
+choco install make
+```
+Após isso, basta executar via terminal no diretório do projeto o comando
+‎ 
+```
+make
+```
