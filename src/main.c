@@ -16,9 +16,19 @@ int main(int argc, char *argv[]) {
     SetConsoleOutputCP(CP_UTF8);
 
     int qty = qtyItems();
+
+    if (isFileEmpty) {
+        printf("Aviso! o estoque está vazio. Adicione itens ao estoque.\n");
+        printf("Pressione qualquer tecla para continuar.\n");
+        fflush(stdin);
+        getchar();
+        system("cls");
+        addProduct();
+        qty = qtyItems();
+    }
+
     produto *arrayProdutos = import_data();
     menu(arrayProdutos, qty);
-
-    free(arrayProdutos);
+    
     return 0;
 }

@@ -1,5 +1,6 @@
 #include "verifystorage.h"
 
+bool isFileEmpty = false;
 int qty = 0;
 
 /**
@@ -14,14 +15,22 @@ int qty = 0;
 int qtyItems(){
     mkdir("database");
     FILE *ptrStorage = fopen("database/storage.txt", "r");
+
     if (ptrStorage == NULL) {
         ptrStorage = fopen("database/storage.txt", "w");
+        isFileEmpty = true;
+        return 0;
     }
+    
+    qty = 0;
     char buffer[100];
     while (fgets(buffer, sizeof(buffer), ptrStorage) != NULL) {
         qty++;
     }
     fclose(ptrStorage);
+    if (qty == 0){
+        isFileEmpty = true;
+    }
     return qty;
 }
 /**

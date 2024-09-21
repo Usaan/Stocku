@@ -7,5 +7,8 @@
 #include "findprodmethods.h"
 #include "listingprods.h"
 #include "overwrite.h"
+#include "addprod.h"
 
 void menu(produto *arrayProdutos, int qtd);
+
+void submenu();
