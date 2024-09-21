@@ -15,7 +15,8 @@ void menu(produto *arrayProdutos, int qtd) {
         switch (option) {
         case 1:
             system("cls");
-            addProduct();
+            addProduct(&arrayProdutos, &qtd);
+            overwrite(arrayProdutos, qtd);
             break;
         case 2:
             system("cls");

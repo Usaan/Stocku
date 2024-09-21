@@ -4,4 +4,4 @@
 #include <string.h>
 #include "verifystorage.h"
 
-void addProduct();
+void addProduct(produto **arrayProdutos, int *qtd);

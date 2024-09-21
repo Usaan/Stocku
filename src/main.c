@@ -18,17 +18,21 @@ int main(int argc, char *argv[]) {
     int qty = qtyItems();
 
     if (isFileEmpty) {
+        produto *arrayProdutos = NULL;
+
         printf("Aviso! o estoque está vazio. Adicione itens ao estoque.\n");
         printf("Pressione qualquer tecla para continuar.\n");
         fflush(stdin);
         getchar();
         system("cls");
-        addProduct();
+        addProduct(&arrayProdutos, &qty);
+        overwrite(arrayProdutos, qty);
+        free(arrayProdutos);
         qty = qtyItems();
     }
 
     produto *arrayProdutos = import_data();
     menu(arrayProdutos, qty);
-    
+    free(arrayProdutos);
     return 0;
 }
