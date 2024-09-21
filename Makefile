@@ -15,6 +15,7 @@ libgi:
 	gcc -c ${SRC}\listingprods.c -I ${INCLUDE} -o ${OBJ}\listingprods.o
 	gcc -c ${SRC}\menu.c -I ${INCLUDE} -o ${OBJ}\menu.o
 	gcc -c ${SRC}\overwrite.c -I ${INCLUDE} -o ${OBJ}\overwrite.o
+	gcc -c ${SRC}\addprod.c -I ${INCLUDE} -o ${OBJ}\addprod.o
 # target aplicativo
 myapp:
 # cria o diretório bin caso não exista
