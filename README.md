@@ -49,12 +49,6 @@ O programa Stocku serve para gerenciamento básico de estoque através de um dat
 
 - [@Usaan](https://github.com/Usaan)
 - [@annavitoriasm](https://github.com/annavitoriasm)
--
--
--
--
--
-
 
 
 ## Instruções para compilação
