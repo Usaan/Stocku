@@ -11,4 +11,4 @@
 
 void menu(produto *arrayProdutos, int qtd);
 
-void submenu();
+void submenu(produto *arrayProdutos, int qtd);
