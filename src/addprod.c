@@ -13,10 +13,9 @@
  *          Incrementa a quantidade de produtos no vetor.
  */
 void addProduct(produto **arrayProdutos, int *qtd) {
-    produto *tempAllocation = realloc(*arrayProdutos, sizeof(produto) * (*qtd + 1));
-    *arrayProdutos = tempAllocation;
+    *arrayProdutos = realloc(*arrayProdutos, sizeof(produto) * (*qtd + 1));
 
-    int nextID = *qtd + 1;
+    int nextID = (*qtd) + 1;
     char prodName[20];
     int quantidade;
     float price;
@@ -39,5 +38,5 @@ void addProduct(produto **arrayProdutos, int *qtd) {
     (*arrayProdutos)[*qtd].quantity = quantidade;
     (*arrayProdutos)[*qtd].price = price;
 
-    *qtd = *qtd + 1;
+    (*qtd)++;
 }
