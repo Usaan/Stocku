@@ -7,7 +7,7 @@ void menu(produto *arrayProdutos, int qtd) {
     do {
         system("cls");
         printf("\n\t\t\t\t -- [ MENU INICIAL ] --\n");
-        printf("\n[1]. Cadastrar produtos\t\t[2]. Listar produtos\t\t[3]. Gerenciar estoque\n[4]. Buscar produtos\t\t[0]. Sair\n");
+        printf("\n[1] Cadastrar produtos\t\t[2] Listar produtos\t\t[3] Gerenciar estoque\n[4] Buscar produtos\t\t[5] Remover produtos\t\t[0] Sair\n");
         printf("\nEscolha uma opção: ");
         fflush(stdin);
         scanf("%d", &option);
@@ -75,19 +75,24 @@ void menu(produto *arrayProdutos, int qtd) {
             }
             system("cls");
             break;
-            case 0:
-                system("cls");
-                printf("\nEncerrando...\n   ^---^\n  ( •ω• )\n o(  .  )o \n   U---U ");
-                Sleep(2000);
-                break;
-            default:
-                system("cls");
-                printf("\nOpção inválida! Pressione qualquer tecla para repetir.\n");
-                fflush(stdin);
-                getchar();
-                system("cls");
-                break;
-            }
+        case 5:
+            system("cls");
+            remProduct(&arrayProdutos, &qtd);
+            overwrite(arrayProdutos, qtd);
+            break;
+        case 0:
+            system("cls");
+            printf("\nEncerrando...\n   ^---^\n  ( •ω• )\n o(  .  )o \n   U---U ");
+            Sleep(2000);
+            break;
+        default:
+            system("cls");
+            printf("\nOpção inválida! Pressione qualquer tecla para repetir.\n");
+            fflush(stdin);
+            getchar();
+            system("cls");
+            break;
+        }
     }while (option != 0);
 }
 void submenu(produto *arrayProdutos, int qtd) {

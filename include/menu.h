@@ -8,6 +8,7 @@
 #include "listingprods.h"
 #include "overwrite.h"
 #include "addprod.h"
+#include "remprod.h"
 
 void menu(produto *arrayProdutos, int qtd);
 
