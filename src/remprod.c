@@ -1,5 +1,14 @@
 #include "remprod.h"
 
+/**
+ * \brief Remove um produto do estoque.
+ *
+ * \param arrayProdutos com asterisco duplo significa que o ponteiro aponta para o ponteiro responsável pelo array de produtos.
+ * \param qtd com asterisco significa que é o ponteiro responsável pela quantidade de produtos no estoque.
+ *
+ * \details Requisita ao usuário o ID do produto a ser removido.
+ *          Caso o ID exista, remove o produto do vetor e decrementa a quantidade de produtos, realocando a memória necessária.
+ */
 void remProduct(produto **arrayProdutos, int *qtd) {
     bool idExists = false;
     int id;
