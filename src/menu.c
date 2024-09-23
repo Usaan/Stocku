@@ -6,7 +6,7 @@ void menu(produto *arrayProdutos, int qtd) {
     
     do {
         system("cls");
-        printf("\n\t\t\t\t -- [ MENU INICIAL ] --\n");
+        printf("\n\t\t\t\t-- [ MENU INICIAL ] --\n");
         printf("\n[1] Cadastrar produtos\t\t[2] Listar produtos\t\t[3] Gerenciar estoque\n[4] Buscar produtos\t\t[5] Remover produtos\t\t[0] Sair\n");
         printf("\nEscolha uma opção: ");
         fflush(stdin);
@@ -101,8 +101,8 @@ void submenu(produto *arrayProdutos, int qtd) {
     do {
         int cont = 0;
         system("cls");
-        printf("\n\t\t\t\t   -- [ ESTOQUE ] --\n");
-        printf("\n[1]. Adicionar produtos\t\t[2]. Remover produtos\t\t[0]. Voltar\n");
+        printf("\n\t\t\t\t --  [ ESTOQUE ] --\n");
+        printf("\n[1] Adicionar produtos\t\t[2] Remover produtos\t\t[0] Voltar\n");
         printf("\nEscolha uma opção: ");
         fflush(stdin);
         scanf("%d", &option);
