@@ -6,4 +6,5 @@
 #include "listingprods.h"
 #include "verifystorage.h"
 
+void addProduct(produto **arrayProdutos, int *qtd);
 void remProduct(produto **arrayProdutos, int *qtd);
