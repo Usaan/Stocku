@@ -21,7 +21,7 @@ int qtyItems(){
         isFileEmpty = true;
         return 0;
     }
-    
+
     qty = 0;
     char buffer[100];
     while (fgets(buffer, sizeof(buffer), ptrStorage) != NULL) {
@@ -44,16 +44,16 @@ int qtyItems(){
  * @return Um ponteiro para o array de structs >produto< com os dados do database.
  */
 produto *import_data() {
-    FILE *ptrStorage = fopen("database/storage.txt", "r");
     produto *arrayProdutos = malloc(sizeof(produto) * qty);
 
-    for (int i = 0; i < qty; i++) {
-        fscanf(ptrStorage, "%d %19s %d %f", 
-        &arrayProdutos[i].id,
-        arrayProdutos[i].name,
-        &arrayProdutos[i].quantity,
-        &arrayProdutos[i].price);
+    with (ptrStorage, fclose, fopen("database/storage.txt", "r")){
+        for (int i = 0; i < qty; i++) {
+            fscanf(ptrStorage, "%d %19s %d %f",
+            &arrayProdutos[i].id,
+            arrayProdutos[i].name,
+            &arrayProdutos[i].quantity,
+            &arrayProdutos[i].price);
+        }
+        return arrayProdutos;
     }
-    fclose(ptrStorage);
-    return arrayProdutos;
 }

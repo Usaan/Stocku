@@ -3,12 +3,12 @@
 void list_products(produto *arrayProdutos, int qtd) {
     printf("---------------------------------------------------------------\n");
     printf("%-10s%-19s%-10s%-10s\n", "ID", "Nome", "Qtd", "Preço");
-    for (int i = 0; i < qtd; i++) {
+    foreach (item, produto, qtd, arrayProdutos) {
         printf("%-10d%-19s%-10dR$%-10.2f\n",
-        arrayProdutos[i].id,
-        arrayProdutos[i].name,
-        arrayProdutos[i].quantity,
-        arrayProdutos[i].price);
+        item->id,
+        item->name,
+        item->quantity,
+        item->price);
     }
     printf("---------------------------------------------------------------\n");
     fflush(stdin);
@@ -19,11 +19,11 @@ void list_products(produto *arrayProdutos, int qtd) {
 void list_products_simple(produto *arrayProdutos, int qtd) {
     printf("-----------------------------------------\n");
     printf("%-10s%-19s%-10s\n", "ID", "Nome", "Qtd");
-    for (int i = 0; i < qtd; i++) {
+    foreach (item, produto, qtd, arrayProdutos) {
         printf("%-10d%-19s%-10d\n",
-        arrayProdutos[i].id,
-        arrayProdutos[i].name,
-        arrayProdutos[i].quantity);
+        item->id,
+        item->name,
+        item->quantity);
     }
     printf("-----------------------------------------\n");
 }

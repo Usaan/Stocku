@@ -43,7 +43,7 @@ void menu(produto *arrayProdutos, int qtd) {
                         printf("%-19s%-10dR$%-10.2f\n", test1->name, test1->quantity, test1->price);
                         printf("-----------------------------------------\n");
                     } else {
-                        printf("\nNenhum item encontrado!\n");
+                        printf("Nenhum item encontrado!");
                     }
                     fflush(stdin);
                     getchar();

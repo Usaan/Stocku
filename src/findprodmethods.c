@@ -11,14 +11,17 @@
 produto* find_by_id(produto *arrayProdutos, int qtd) {
     printf("ID do item que deseja buscar: ");
     scanf("%d", &ID);
-    system("cls");
 
-    for (int i = 0; i < qtd; i++) {
-        if (arrayProdutos[i].id == ID) {
-            return &arrayProdutos[i];
+    foreach (item, produto, qtd, arrayProdutos){
+        if (equal(item->id, ID)) {
+            return item;
         }
     }
     return NULL;
+
+    fflush(stdin);
+    getchar();
+    system("cls");
 }
 
 /**
@@ -40,9 +43,9 @@ produto* find_by_name(produto *arrayProdutos, int qtd) {
     tempSearch[strcspn(tempSearch, "\n")] = 0;
     system("cls");
     // busca pelo nome comparando o nome do arrayProdutos[i] com o nome tempSearch e imediatamente retorna o resultado
-    for (int i = 0; i < qtd; i++) {
-        if (strcmp(arrayProdutos[i].name, tempSearch) == 0) {
-            return &arrayProdutos[i];
+    foreach (item, produto, qtd, arrayProdutos){
+        if (equal(item->name, tempSearch)) {
+            return item;
         }
     }
     // caso não encontre, retorna NULL (já que um ponteiro precisa ser retornado pela função)

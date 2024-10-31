@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <direct.h>
 #include <string.h>
+#include "pretty.h"
 
 int selected_product, selected_qty, ID;
 
