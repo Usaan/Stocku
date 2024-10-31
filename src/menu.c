@@ -3,7 +3,7 @@
 void menu(produto *arrayProdutos, int qtd) {
 
     int option;
-    
+
     do {
         system("cls");
         printf("\n\t\t\t\t-- [ MENU INICIAL ] --\n");
@@ -39,7 +39,7 @@ void menu(produto *arrayProdutos, int qtd) {
                     produto* test1 = find_by_id(arrayProdutos, qtd);
                     if (test1 != NULL) {
                         printf("-----------------------------------------\n");
-                        printf("%-19s%-10s%-10s\n", "Nome", "Qtd", "Preço");	
+                        printf("%-19s%-10s%-10s\n", "Nome", "Qtd", "Preço");
                         printf("%-19s%-10dR$%-10.2f\n", test1->name, test1->quantity, test1->price);
                         printf("-----------------------------------------\n");
                     } else {
@@ -54,7 +54,7 @@ void menu(produto *arrayProdutos, int qtd) {
                     produto* test2 = find_by_name(arrayProdutos, qtd);
                     if (test2 != NULL) {
                         printf("-----------------------------------------\n");
-                        printf("%-19s%-10s%-10s\n", "Nome", "Qtd", "Preço");	
+                        printf("%-19s%-10s%-10s\n", "Nome", "Qtd", "Preço");
                         printf("%-19s%-10dR$%-10.2f\n", test2->name, test2->quantity, test2->price);
                         printf("-----------------------------------------\n");
                     } else {
@@ -83,7 +83,7 @@ void menu(produto *arrayProdutos, int qtd) {
         case 0:
             system("cls");
             printf("\nEncerrando...\n   ^---^\n  ( •ω• )\n o(  .  )o \n   U---U ");
-            Sleep(2000);
+            mSleep(2000);
             break;
         default:
             system("cls");
@@ -149,20 +149,20 @@ void submenu(produto *arrayProdutos, int qtd) {
 
                                 printf("\nEsta numeração não é compatível! Tente novamente.\n");
                             }
-                            else{ 
+                            else{
                                 arrayProdutos[selected_product - 1].quantity += selected_qty;
                                 system("cls");
                                 printf("\nQuantidade acrescentada!\n");
 
                                 overwrite(arrayProdutos, qtd);
-                                Sleep(1000);
+                                mSleep(1000);
                                 system("cls");
-                                break; 
-                                } 
+                                break;
+                                }
                         }
                         break;
                         while (valid_qty != 0);
-                    }  
+                    }
                 }
                 break;
                 while (valid_product != 0);
@@ -208,20 +208,20 @@ void submenu(produto *arrayProdutos, int qtd) {
 
                                 printf("\nEsta numeração não é compatível! Tente novamente.\n");
                             }
-                            else{ 
+                            else{
                                 arrayProdutos[selected_product - 1].quantity -= selected_qty;
                                 system("cls");
                                 printf("\nQuantidade removida!\n");
 
                                 overwrite(arrayProdutos, qtd);
-                                Sleep(1000);
+                                mSleep(1000);
                                 system("cls");
-                                break; 
-                                } 
+                                break;
+                                }
                         }
                         break;
                         while (valid_qty_remove != 0);
-                    }  
+                    }
                 }
                 break;
                 while (valid_remove != 0);

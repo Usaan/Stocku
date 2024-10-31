@@ -12,8 +12,6 @@
  * dados dele para um array de structs. Em seguida, chama a função menu e finaliza o programa liberando a memória alocada.
  */
 int main(int argc, char *argv[]) {
-    setlocale(LC_ALL, "pt_BR.UTF-8");
-    SetConsoleOutputCP(CP_UTF8);
 
     int qty = qtyItems();
 

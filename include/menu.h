@@ -1,4 +1,7 @@
-#include <windows.h>
+#ifndef MENU_H
+#define MENU_H
+#include "sleep.h"
+#include "pretty.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <direct.h>
@@ -7,9 +10,10 @@
 #include "findprodmethods.h"
 #include "listingprods.h"
 #include "overwrite.h"
-#include "addprod.h"
-#include "remprod.h"
+#include "prodmanagement.h"
 
 void menu(produto *arrayProdutos, int qtd);
 
 void submenu(produto *arrayProdutos, int qtd);
+
+#endif
